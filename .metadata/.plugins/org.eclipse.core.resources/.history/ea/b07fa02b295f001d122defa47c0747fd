@@ -1,0 +1,34 @@
+package com.website.servlets.entity;
+
+import java.util.*;
+import java.io.*;
+
+public class Solution {
+
+	public static void f(int idx,String s,List<String> ans,StringBuilder str){
+	        if(idx == s.length()){
+	            ans.add(str.toString());
+	            return;
+	        }
+	        
+	        for(int i=0;i<s.length();i++){
+	            char c = s.charAt(i);
+	            str.append(c);
+	            f(i+1,s,ans,str);
+	            str.deleteCharAt(str.capacity()-1);
+	        }
+	    }
+
+	public static List<String> findPermutations(String s) {
+		List<String> ans = new ArrayList<>();
+		f(0, s, ans, new StringBuilder());
+		return ans;
+
+	}
+	
+	public static void main(String args[]) {
+		String s = "abc";
+		
+		System.out.print(findPermutations(s));
+	}
+}

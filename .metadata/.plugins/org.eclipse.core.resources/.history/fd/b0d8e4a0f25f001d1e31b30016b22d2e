@@ -1,0 +1,48 @@
+package com.website.servlets.entity;
+
+import java.util.*;
+import java.io.*;
+
+public class Solution {
+	
+	
+	public static void f(int idx,int n,int[] nums) {
+		if(idx == n) {
+			for(int e: nums) {
+				System.out.print(e +" ");
+			}
+			System.out.println();
+			return;
+		}
+		
+		for(int i=idx;i<n;i++) {
+			
+			swap(i,idx,nums);
+			f(i+1,n,nums);
+			if(i+1 < n)swap(i+1,idx,nums);
+			
+		}
+		
+	}
+	
+	
+	
+
+	
+	
+	public static void swap(int i, int idx, int[] nums) {	
+		int temp = nums[idx];
+		nums[idx] = nums[i];
+		nums[i] = temp;
+	}
+
+
+
+
+
+
+	public static void main(String args[]) {
+		int[] nums = new int[] {1,2,3};
+		
+	}
+}

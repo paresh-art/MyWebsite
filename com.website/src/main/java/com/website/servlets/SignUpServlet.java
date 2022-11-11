@@ -1,0 +1,63 @@
+package com.website.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.website.servlets.dao.DaoCRUD;
+import com.website.servlets.entity.User;
+import com.website.servlets.entity.UserName;
+
+@WebServlet("/signup")
+public class SignUpServlet extends HttpServlet{
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		PrintWriter out = response.getWriter();
+		
+		
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		UserName userName = new UserName();
+		userName.setFname(fname);
+		userName.setLname(lname);
+		
+		User user = new User();
+		user.setUserName(userName);
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("user", user);
+		session.setAttribute("email",email);
+		if(email != "") {
+			
+			DaoCRUD daoCRUD = new DaoCRUD();
+			daoCRUD.saveUser(user);
+			response.sendRedirect("home.jsp");
+		}
+		else {
+			RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+			response.getWriter().print("<p class="+"text-danger"+">Please fill the form.</p>");
+			rd.include(request, response);
+		}
+		
+		
+//		out.println("hi "+user+" creating ur account");
+		
+		
+		
+		
+	}
+
+}

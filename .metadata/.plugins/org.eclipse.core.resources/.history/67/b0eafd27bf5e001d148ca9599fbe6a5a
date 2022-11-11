@@ -1,0 +1,41 @@
+package com.website.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.website.servlets.entity.User;
+import com.website.servlets.entity.UserName;
+
+@WebServlet("/signup")
+public class SignUpServlet extends HttpServlet{
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		PrintWriter out = response.getWriter();
+		
+		
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		UserName userName = new UserName();
+		userName.setFname(fname);
+		userName.setLname(lname);
+		
+		User user = new User();
+		user.setUserName(userName);
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		
+		
+		out.println("hi "+user+" creating ur account");
+	}
+
+}

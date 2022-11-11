@@ -1,0 +1,16 @@
+!SESSION 2022-11-10 20:17:30.088 -----------------------------------------------
+eclipse.buildId=4.25.0.I20220831-1800
+java.version=18.0.1.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+This is a continuation of log file C:\Users\kumar\OneDrive\Desktop\MyWebsite\.metadata\.bak_0.log
+Created Time: 2022-11-10 20:19:34.102
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-11-10 20:19:34.103
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-11-10 20:19:34.125
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

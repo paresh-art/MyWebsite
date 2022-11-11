@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h1 class="mx-auto text-center text-light">Sign in</h1>
+		<form action="home.jsp" class="mt-4" method="post">
+			<div class="row">
+				<div class="col-lg-6 col-md-8 col-sm-12 mx-auto text-light">
+					<input type="text" class="form-control" placeholder="Email address"
+						name="email">
+				</div>
+			</div>
+
+			<div class="row mt-2">
+				<div class="col-lg-6 col-md-8 col-sm-12 mx-auto text-light">
+					<input type="text" class="form-control" placeholder="password"
+						name="password">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-lg-6 col-md-8 col-sm-12 mx-auto text-light">
+					<button class="btn btn-primary " type="submit">Sign in</button>
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+
+
+
+</body>
+</html>

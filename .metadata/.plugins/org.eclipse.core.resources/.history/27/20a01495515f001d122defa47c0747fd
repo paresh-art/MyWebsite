@@ -1,0 +1,23 @@
+package com.website.servlets.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.website.servlets.entity.User;
+
+public class DaoCRUD {
+	private UserDao userDao = new UserDao();
+	private SessionFactory sessionFactory = userDao.getSessionFactory();
+	
+	public void saveUser(User user) {
+
+		Session session = sessionFactory.openSession();
+		
+		session.beginTransaction();
+		session.save(user);
+		session.getTransaction().commit();
+		session.close();
+	
+	}
+
+}
